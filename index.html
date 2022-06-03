@@ -1,0 +1,454 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>spacebox</title>
+    <style type="text/css">
+        body {
+            background: lightblue url("background.png") no-repeat fixed center;
+            background-size: cover;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+        .flier {
+            pointer-events: none;
+        }
+        
+        .flier>* {
+            animation: fly 50s linear infinite;
+            pointer-events: none !important;
+            top: 0;
+            left: 0;
+            transform: translateX(-120%) translateY(-120%) rotateZ(0);
+            position: fixed;
+            animation-delay: 1s;
+            z-index: -1;
+        }
+        
+        @keyframes fly {
+            98.001%,
+            0% {
+                display: block;
+                transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
+            }
+            15% {
+                transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
+            }
+            15.001%,
+            18% {
+                transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
+            }
+            40% {
+                transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
+            }
+            40.001%,
+            43% {
+                transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
+            }
+            65% {
+                transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
+            }
+            65.001%,
+            68% {
+                transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
+            }
+            95% {
+                transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
+            }
+        }
+        
+        .boxlogo {
+            background-color: rgba(211, 211, 211, 0);
+            width: 1767px;
+            border: 64px solid rgba(0, 128, 0, 0);
+        }
+        
+        .box {
+            background-color: rgba(211, 211, 211, 0);
+            width: 1767px;
+            border: 64px solid rgba(0, 128, 0, 0);
+            margin-left: auto;
+        }
+        
+        h1 {
+            text-align: right;
+            color: rgb(151, 91, 0);
+            font-family: 'Rubik', sans-serif;
+            font-size: 65px;
+            -webkit-text-stroke: 1px rgb(49, 18, 18);
+        }
+        
+        .info {
+            text-align: right;
+            color: rgb(151, 91, 0);
+            font-family: 'Rubik', sans-serif;
+            font-size: 35px;
+            -webkit-text-stroke: 0.5px rgb(49, 18, 18);
+            font-weight: bold;
+        }
+        
+        .project1 {
+            background-color: rgb(187, 25, 25);
+            width: 1500px;
+            border: 15px solid rgba(0, 128, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            border-radius: 25px 25px 0px 0px;
+            margin: auto;
+        }
+        
+        .project2 {
+            background-color: rgb(250, 209, 29);
+            width: 1500px;
+            border: 15px solid rgba(0, 128, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin: auto;
+        }
+        
+        .project3 {
+            background-color: rgb(20, 161, 39);
+            width: 1500px;
+            border: 15px solid rgba(0, 128, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            border-radius: 0px 0px 25px 25px;
+            margin: auto;
+        }
+        
+        .arrow {
+            width: 20px;
+            height: 20px;
+            border: 6px solid black;
+            border-left: 0;
+            border-top: 0;
+            transform: rotate(45deg);
+            float: left;
+            margin: auto;
+        }
+        
+        .arrow2 {
+            width: 20px;
+            height: 20px;
+            border: 6px solid black;
+            border-left: 0;
+            border-top: 0;
+            transform: rotate(45deg);
+            float: right;
+        }
+        
+        input {
+            padding: 20px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 30px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: flex;
+        }
+        
+        input:hover {
+            padding: 20px;
+            font-family: 'Rubik', sans-serif;
+            font-size: 30px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 24px 32px 0 rgba(0, 0, 0, 0.24), 0 34px 100px 0 rgba(0, 0, 0, 0.19);
+            cursor: pointer;
+            display: flex;
+        }
+        
+        .morebox1 {
+            background-color: rgba(211, 211, 211, 0);
+            width: 700px;
+            border: 15px solid rgba(0, 128, 0, 0);
+        }
+        
+        .morebox2 {
+            background-color: rgba(211, 211, 211, 0);
+            width: 800px;
+            border: 15px solid rgba(0, 160, 0, 0);
+            display: -webkit-flex;
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            justify-content: flex-end;
+        }
+        
+        .morebox3 {
+            background-color: rgba(255, 0, 0, 0);
+            width: 934px;
+            border: 15px solid rgba(0, 128, 0, 0);
+        }
+        
+        #p1info {
+            background-color: rgb(187, 25, 25);
+            width: 1500px;
+            border: 15px solid rgba(0, 0, 0, 0);
+            align-items: center;
+            justify-content: right;
+            margin: auto;
+            display: flex;
+            display: none
+        }
+        
+        #p2info {
+            background-color: rgb(250, 209, 29);
+            width: 1500px;
+            border: 15px solid rgba(0, 128, 0, 0);
+            align-items: center;
+            justify-content: right;
+            margin: auto;
+            display: flex;
+            display: none
+        }
+        
+        #p3info {
+            background-color: rgb(20, 161, 39);
+            width: 1500px;
+            border-radius: 0px 0px 25px 25px;
+            border: 15px solid rgba(0, 128, 0, 0);
+            align-items: center;
+            justify-content: right;
+            margin: auto;
+            display: flex;
+            display: none
+        }
+        
+        .p1text {
+            text-align: right;
+            font-family: 'Rubik', sans-serif;
+            font-size: 170%;
+            line-height: 1.2;
+            color: white;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        
+        .p1exmp {
+            height: 400px;
+            border: 30px solid rgba(0, 146, 0, 0);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .p2text {
+            font-family: 'Rubik', sans-serif;
+            font-size: 170%;
+            line-height: 1.2;
+            color: white;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        
+        .p2exmp {
+            height: 400px;
+            border: 30px solid rgba(0, 146, 0, 0);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .p3text {
+            text-align-last: right;
+            font-family: 'Rubik', sans-serif;
+            font-size: 170%;
+            line-height: 1.2;
+            color: white;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        
+        .p3exmp {
+            height: 400px;
+            border: 30px solid rgba(0, 146, 0, 0);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .kesher {
+            width: 1500px;
+            height: 300px;
+            border: 64px solid rgba(0, 128, 0, 0);
+            margin: auto;
+        }
+        
+        .keser {
+            text-align: center;
+            font-family: 'Rubik', sans-serif;
+            font-size: 350%;
+            line-height: 1.2;
+            color: white;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+        
+        .icons {
+            width: 1400px;
+            height: 100px;
+            border: 10px solid rgba(0, 128, 0, 0);
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery('#hideshow').live('click', function(event) {
+                jQuery('#p1info').toggle();
+            });
+        });
+
+        jQuery(document).ready(function() {
+            jQuery('#hideshow2').live('click', function(event) {
+                jQuery('#p2info').toggle();
+            });
+        });
+
+        jQuery(document).ready(function() {
+            jQuery('#hideshow3').live('click', function(event) {
+                jQuery('#p3info').toggle()
+                $(".project3").css("border-radius", "0px 0px 0px 0px")
+            });
+        });
+    </script>
+
+    <div class="boxlogo">
+        <img src="logo.png">
+    </div>
+    <div class="box">
+        <div class="flier">
+            <img src="box.png">
+        </div>
+
+
+        <div class="koteret">
+            <h1>קצת עליי</h1>
+        </div>
+        <div class="info">
+            <p>
+                היי אני עילי עזרא, בן 16 שגר בישראל
+                <br> מאז שאני זוכר את עצמי אני תמיד אהבתי טכנולוגיה וחשיבה מחוץ לקופסא
+                <br> השאיפה שלי היא להראות שתכנות ויצירת משחקי מחשב יכולים להיות כיפים בצורת חשיבה הנכונה
+                <br> :הנה כמה פרוייקטים שאני עובד עליהם
+            </p>
+        </div>
+    </div>
+
+    <div class="project1">
+        <div class="morebox1">
+            <input type='button' id='hideshow' value='מידע נוסף'>
+        </div>
+        <a href="https://hop.co.il/archive/games" target="_blank">
+            <img src="nostlgihop.png">
+        </a>
+        <img src="tralalit.svg">
+    </div>
+
+    <div id="p1info">
+        <div class="p1text">
+            <p>
+                <br> נוסטלגיהופ הוא פרויקט עצום שהתחיל ב2020
+                <br>!במטרה לשחזר ולשפר את כל משחקי המחשב של הופ
+                <br>!הפרויקט התחיל כפרויקט מעריצים ובחורף 2021 הפך לפרויקט רשמי בשיתוף עם הופ
+                <br>כעת ניתן למצוא 10 משחקים ב
+                <a href="https://hop.co.il/archive/games" target="_blank" style="text-decoration: none">אתר</a> ולשחק בהם אף על פי חוסר התמיכה בפלאגין פלאש שבו המשחקים בנוים
+                <br>בנוסף בעתיד תצא תוכנה שמטרתה לרכז את כל התכנים בצורה הטובה ביותר, פרטים נוספים בקרוב
+                <br>
+                <br>
+                <a href="https://ruffle.rs/" target="_blank" style="text-decoration: none">ruffle</a> וב rust , css , html: שימוש בשפות
+            </p>
+        </div>
+        <div class="p1exmp">
+            <img src="hop1.png"> <img src="hop2.png">
+        </div>
+    </div>
+
+
+    <div class="project2 ">
+        <img src="twee.png ">
+        <a href="https://discord.gg/4Uhh5BcDAX " target="_blank ">
+            <img src="tweelogo.png ">
+        </a>
+        <div class="morebox2 ">
+            <img src="Sprite-0001.png ">
+            <input type='button' id='hideshow2' value='מידע נוסף'>
+        </div>
+    </div>
+
+    <div id="p2info">
+        <div class="p2text">
+            <p>
+                twee is a game that realesd in 2010 and was made by codinsoft<br> twee forever is the offical sequel that will inculde the original<br> game in remasterd version and new worlds new levels new enemies and more!<br> twee forever is in alpha
+                and it will take time until the final release<br> for now you can join the
+                <a href="https://discord.gg/4Uhh5BcDAX" target="_blank" style="text-decoration: none">discord server</a> to stay updated<br>
+                <br> Used program language: game maker language
+            </p>
+        </div>
+        <div class="p2exmp">
+            <img src="twee1.png"> <img src="twee2.png">
+        </div>
+    </div>
+
+    <div class="project3 ">
+        <div class="morebox3 ">
+            <input type='button' id='hideshow3' value='מידע נוסף'>
+        </div>
+        <a href="https://sable.co.il/ " target="_blank">
+            <img src="sablogo.png ">
+        </a>
+        <img src="sable.png ">
+    </div>
+
+    <div id="p3info">
+        <div class="p3text">
+            <p>
+                סייבל הוא עולם וירטואלי שנמצא בבטא פתוחה ועתיד לצאת בקרוב<br> החזון ביצירה של המוזיקה בסייבל הוא לתת למשחק מוזיקה רשמית ויחודית להבדיל מעולמות וירטואלים אחרים<br> המוזיקה שמה דגש על להיות יחיודית לאותו אזור ומוזיקה שכיף לשמוע אפילו שלא
+                משחקים
+                <br>
+                <br> Fl studio :שימוש בתוכנה
+            </p>
+        </div>
+        <div class="p3exmp">
+            <iframe width="700" height="400" src="https://www.youtube.com/embed/aMAtD8J86yg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="700" height="403" src="https://www.youtube.com/embed/1wV3zyheses" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="kesher">
+        <div class="keser">
+            <p>
+                !בואו נשמור על קשר
+            </p>
+        </div>
+        <div class="icons">
+            <a href="https://www.instagram.com/ilayezra37/" target="_blank ">
+                <img src="inst.png" width="100" height="100">
+            </a>
+            <a href="https://twitter.com/milkithememe" target="_blank ">
+                <img src="twit.png" width="100" height="100">
+            </a>
+            <a href="https://github.com/milkiswf" target="_blank ">
+                <img src="git2.png" width="100" height="100">
+            </a>
+            <a href="https://www.reddit.com/user/11-roystar" target="_blank ">
+                <img src="red.png" width="100" height="100">
+            </a>
+            <a href="https://discord.com/users/532594707692519425" target="_blank ">
+                <img src="dis.png" width="100" height="100">
+            </a>
+            <a href="mailto:ilayezra37@gmail.com" target="_blank ">
+                <img src="mail.png" width="100" height="100">
+            </a>
+            <a href="https://open.spotify.com/user/0wjn2lgm123u5cuwe0o7f25d3" target="_blank ">
+                <img src="spot.png" width="100" height="100">
+            </a>
+            <a href="https://paypal.me/ilayezra37" target="_blank ">
+                <img src="pal.png" width="100" height="100">
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
