@@ -1,0 +1,7 @@
+- Fix the css when shrinking the width of the window ❌
+
+- Check the English version in case there are spelling errors ❌
+
+- add footer with last edit time and link to the github source code ❌
+
+-adjust to mobile (most importent) ❌
