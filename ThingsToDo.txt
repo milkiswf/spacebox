@@ -4,4 +4,4 @@
 
 - add footer with last edit time and link to the github source code ❌
 
--adjust to mobile (most importent) ❌
+-adjust to mobile (most importent) ✅
