@@ -1,4 +1,4 @@
-- Fix the css when shrinking the width of the window ❌
+- Fix the css when shrinking the width of the window ✅
 
 - Check the English version in case there are spelling errors ❌
 
